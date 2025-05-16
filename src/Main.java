@@ -5,8 +5,7 @@ public class Main {
         //задача 2
         checkingTheDevice(1, 2012);
         //задача 3
-        int days = deliveryDistance(95);
-        System.out.println("Потребуется дней " + days);
+        deliveryDays(95);
     }
 
     public static void taskOne() {
@@ -43,6 +42,15 @@ public class Main {
         }
     }
 
+    public static void deliveryDays(int deliveryDistanceTime) {
+        int days = deliveryDistance(deliveryDistanceTime);
+        if (days > 0) {
+            System.out.println("Потребуется дней " + days);
+        } else {
+            System.out.println("Доставка не осуществляется");
+        }
+    }
+
 
     public static int deliveryDistance(int deliveryDistanceTime) {
         taskThree();
@@ -52,8 +60,11 @@ public class Main {
             return 2;
         } else if (deliveryDistanceTime > 60 && deliveryDistanceTime <= 100) {
             return 3;
-        } else
+        } else {
             return 0;
+
+        }
+
     }
 
 }
